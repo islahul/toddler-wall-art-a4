@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """flashcard_generator.py
 
-Generate printable A‑4 sheets (300 dpi PNGs) containing four A‑6 toddler flashcards per page.
+Generate printable A-4 sheets (300 dpi PNGs) containing four A-6 toddler flashcards per page.
 Each card shows:
-  • A large uppercase letter (A–Z)
+  • A large uppercase letter (A-Z)
   • A centred animal illustration (supplied by you)
   • The animal's name
 
 Features
 ========
-* True A‑4 output size (210 mm × 297 mm) at any DPI (default 300)
-* Automatic page breaks – 4 cards/sheet in A‑D, E–H… order
-* Rounded‑corner card borders and grey dashed cut lines
-* Scaling and centring of any input image (PNG/JPG/SVG‑rasterised)
+* True A-4 output size (210 mm × 297 mm) at any DPI (default 300)
+* Automatic page breaks - 4 cards/sheet in A-D, E-H… order
+* Rounded-corner card borders and grey dashed cut lines
+* Scaling and centring of any input image (PNG/JPG/SVG-rasterised)
 * Customisable fonts, colours, DPI, margins, CSV mapping
 
 Quick start
@@ -29,7 +29,7 @@ python flashcard_generator.py --mapping my_animals.csv --outdir sheets/
 
 Dependencies
 ------------
-* Pillow ≥ 10
+* Pillow ≥ 10
 ```bash
 pip install pillow
 ```
@@ -114,7 +114,7 @@ def load_mapping(mapping_csv: str | None, image_dir: Path) -> List[Tuple[str, st
     mapping: List[Tuple[str, str, Path]] = []
 
     if mapping_csv and Path(mapping_csv).exists():
-        with open(mapping_csv, newline="", encoding="utf‑8") as f:
+        with open(mapping_csv, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 letter = row["letter"].strip().upper()
@@ -131,7 +131,7 @@ def load_mapping(mapping_csv: str | None, image_dir: Path) -> List[Tuple[str, st
 
 
 def draw_sheet(group: List[Tuple[str, str, Path]], dpi: int, font_path: Path, out_file: Path, bg_colour: str = "white") -> None:
-    """Render 4 cards (2×2) to one A‑4 PNG file."""
+    """Render 4 cards (2×2) to one A-4 PNG file."""
     # Page & card geometry
     a4_w_mm, a4_h_mm = 210, 297
     page_w, page_h = mm_to_px(a4_w_mm, dpi), mm_to_px(a4_h_mm, dpi)
@@ -146,7 +146,7 @@ def draw_sheet(group: List[Tuple[str, str, Path]], dpi: int, font_path: Path, ou
 
     # Measurements
     pad = mm_to_px(5, dpi)          # inner padding inside each card
-    border_w = mm_to_px(2, dpi)     # rounded‑rect border thickness
+    border_w = mm_to_px(2, dpi)     # rounded-rect border thickness
     radius = mm_to_px(4, dpi)       # corner radius
     dash_len = mm_to_px(2, dpi) * 5 # length of dashes for cut lines
 
@@ -160,7 +160,7 @@ def draw_sheet(group: List[Tuple[str, str, Path]], dpi: int, font_path: Path, ou
         card_bg_color = get_edge_color(img_path)
         draw.rectangle([(x0, y0), (x1, y1)], fill=card_bg_color)
 
-        # ── Cut‑line dashes (grey) ──
+        # ── Cut-line dashes (grey) ──
         for x in range(x0, x1, dash_len * 2):
             draw.line([(x, y0), (min(x + dash_len, x1), y0)], fill="lightgrey")
             draw.line([(x, y1), (min(x + dash_len, x1), y1)], fill="lightgrey")
@@ -203,12 +203,12 @@ def draw_sheet(group: List[Tuple[str, str, Path]], dpi: int, font_path: Path, ou
 # ──────────────────────────────── CLI entry ──────────────────────────────── #
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Generate toddler A‑Z animal flashcards (4 per A‑4 sheet).")
+    p = argparse.ArgumentParser(description="Generate toddler A-Z animal flashcards (4 per A-4 sheet).")
     p.add_argument("--images", default="images", help="Folder containing A.png … Z.png (default: images/)")
     p.add_argument("--mapping", help="CSV mapping with letter,animal,filepath columns (optional)")
     p.add_argument("--outdir", default="sheets", help="Output directory (default: sheets/)")
     p.add_argument("--dpi", type=int, default=300, help="Output DPI (default: 300)")
-    p.add_argument("--font", default="/usr/share/fonts/truetype/dejavu/DejaVuSans‑Bold.ttf", help="TTF font path")
+    p.add_argument("--font", default="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", help="TTF font path")
     return p.parse_args()
 
 
@@ -221,10 +221,10 @@ def main() -> None:
 
     mapping = load_mapping(args.mapping, image_dir)
 
-    # Build 4‑card groups: [A‑D], [E‑H] …
+    # Build 4-card groups: [A-D], [E-H] …
     for i in range(0, len(mapping), 4):
         group = mapping[i : i + 4]
-        span = f"{group[0][0]}‑{group[-1][0]}"
+        span = f"{group[0][0]}-{group[-1][0]}"
         out_file = out_dir / f"flashcards_{span}.png"
         draw_sheet(group, dpi=args.dpi, font_path=Path(args.font), out_file=out_file)
 
