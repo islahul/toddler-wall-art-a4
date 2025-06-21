@@ -56,10 +56,10 @@ export const SheetView: React.FC = () => {
           </div>
         </header>
 
-        <div className="flex justify-between items-center mb-6 p-4 bg-card border rounded-2xl shadow-sm print:hidden">
+        <div className="flex justify-between items-center mb-6 p-4 bg-card rounded-2xl print:hidden">
           <div className="flex items-center gap-3">
             <Button 
-              variant="outline"
+              variant="ghost"
               onClick={() => navigateSheet(-1)}
               disabled={currentSheet === 0}
             >
@@ -73,7 +73,7 @@ export const SheetView: React.FC = () => {
               <span className="text-muted-foreground text-sm">/ {allSheets.length}</span>
             </div>
             <Button 
-              variant="outline"
+              variant="ghost"
               onClick={() => navigateSheet(1)}
               disabled={currentSheet === allSheets.length - 1}
             >
@@ -82,9 +82,14 @@ export const SheetView: React.FC = () => {
             </Button>
           </div>
           
-          <Button onClick={handlePrint}>
-            <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4h10a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2zm0 1a1 1 0 00-1 1v6a1 1 0 001 1h10a1 1 0 001-1V6a1 1 0 00-1-1H5z"></path><path d="M15 14H5a1 1 0 000 2h10a1 1 0 000-2zM4 8a1 1 0 011-1h1a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V8z"></path></svg>
-            Print Sheet
+          <Button 
+            variant="default" 
+            size="icon" 
+            className="size-14 rounded-2xl border-4 border-black bg-teal-400 text-4xl shadow-[6px_6px_0_black] transition-all duration-100 ease-in-out hover:-translate-y-1 hover:shadow-[8px_8px_0_black] active:translate-y-1 active:shadow-[2px_2px_0_black] hover:bg-teal-500 dark:border-white dark:bg-teal-500 dark:shadow-[6px_6px_0_white] dark:hover:shadow-[8px_8px_0_white] dark:active:shadow-[2px_2px_0_white] dark:hover:bg-teal-600"
+            onClick={handlePrint}
+            aria-label="Print Sheet"
+          >
+            🖨️
           </Button>
         </div>
 
