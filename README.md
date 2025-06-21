@@ -1,21 +1,22 @@
-# 🦁 Animal Alphabet Flashcards Generator
+# 🦁 Animal Alphabet Flashcards - Web App
 
-A Python script that generates beautiful, printable A4 sheets containing four A6 toddler flashcards per page. Each card features a large uppercase letter, a centered animal illustration, and the animal's name using the delightful Chalkboard SE font.
+A modern React web application that generates beautiful, printable A4 sheets containing four A6 toddler flashcards per page. Each card features a large uppercase letter, a centered animal illustration, and the animal's name.
 
 ## ✨ Features
 
-- **True A4 output** (210mm × 297mm) at 300 DPI for high-quality printing
+- **True A4 output** (210mm × 297mm) optimized for printing
+- **Interactive web interface** with sheet navigation
+- **Print functionality** with one-click printing
+- **Responsive design** that works on desktop and mobile
 - **Automatic page breaks** – 4 cards per sheet in A-D, E-H… order
 - **Rounded corner borders** with grey dashed cut lines for easy separation
-- **Dynamic background colors** extracted from image edges for visual harmony
+- **Dynamic background colors** for each animal
 - **Perfect text alignment** with proper centering and spacing
-- **Flexible image support** – PNG, JPG, and SVG (rasterized) formats
-- **Customizable fonts, colors, DPI, and margins**
-- **CSV mapping support** for custom animal names and image paths
+- **Built with modern React and Vite** for fast development and deployment
 
 ## 🎨 Sample Output
 
-The generator creates beautiful flashcards like these:
+The app generates beautiful flashcards like these:
 
 ```
 ┌─────────────┐  ┌─────────────┐
@@ -37,59 +38,42 @@ Each sheet contains 4 cards with:
 
 ### Prerequisites
 
-- Python 3.8+
-- Pillow (PIL) library
+- Node.js 18+ and npm
 
 ### Installation
 
 1. **Clone or download this repository**
-2. **Create a virtual environment** (recommended):
+2. **Install dependencies**:
    ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-3. **Install dependencies**:
-   ```bash
-   pip install Pillow
+   npm install
    ```
 
-### Basic Usage
-
-1. **Place your animal images** in the `animals/` folder:
-   - Name them `A.png`, `B.png`, `C.png`... `Z.png`
-   - Use any common image format (PNG, JPG, SVG)
-
-2. **Run the generator**:
+3. **Start the development server**:
    ```bash
-   python flashcard_generator.py --images animals/ --outdir sheets/
+   npm run dev
    ```
 
-3. **Find your flashcards** in the `sheets/` folder:
-   - `flashcards_A-D.png` ![A-D Cards](sheets/flashcards_A-D.png)
-   - `flashcards_E-H.png` ![E-H Cards](sheets/flashcards_E-H.png)
-   - `flashcards_I-L.png` ![I-L Cards](sheets/flashcards_I-L.png)
-   - `flashcards_M-P.png` ![M-P Cards](sheets/flashcards_M-P.png)
-   - `flashcards_Q-T.png` ![Q-T Cards](sheets/flashcards_Q-T.png)
-   - `flashcards_U-X.png` ![U-X Cards](sheets/flashcards_U-X.png)
-   - `flashcards_Y-Z.png` ![Y-Z Cards](sheets/flashcards_Y-Z.png)
+4. **Open your browser** and navigate to `http://localhost:5173`
 
+### Building for Production
 
-### Font Customization
-
-Use different fonts by specifying the path:
-
-**macOS:**
 ```bash
-# Chalkboard SE (playful, child-friendly)
---font /System/Library/Fonts/Supplemental/ChalkboardSE.ttc
-
-# Helvetica (clean, modern)
---font /System/Library/Fonts/Helvetica.ttc
+npm run build
 ```
+
+The built files will be in the `dist/` directory, ready for deployment.
+
+## 🖨️ Printing Instructions
+
+1. **Navigate through sheets** using the Previous/Next buttons
+2. **Click "Print Current Sheet"** to open the print dialog
+3. **Use A4 paper** for best results
+4. **Cut along the dashed lines** to separate individual flashcards
+5. **Each card is A6 size** (105mm × 148mm)
 
 ## 🎨 Default Animals
 
-The generator includes these default animal names:
+The app includes these default animal names:
 
 | Letter | Animal | Letter | Animal | Letter | Animal | Letter | Animal |
 |--------|--------|--------|--------|--------|--------|--------|--------|
@@ -102,10 +86,25 @@ The generator includes these default animal names:
 | | | | | | | Y | Yak |
 | | | | | | | Z | Zebra |
 
+## 🛠️ Customization
+
+### Adding Custom Images
+
+Place your animal images in the `public/animals/` folder:
+- Name them `A.png`, `B.png`, `C.png`... `Z.png`
+- Use any common image format (PNG, JPG, SVG)
+
+### Modifying Animal Names
+
+Edit the `DEFAULT_ANIMALS` array in `src/utils/flashcardGenerator.js` to change animal names.
+
+### Customizing Colors
+
+Modify the `getAnimalBackgroundColor` function in `src/utils/flashcardGenerator.js` to change background colors.
+
 ## 🖨️ Printing Guidelines
 
 - **Paper**: Standard A4 (210mm × 297mm)
-- **Resolution**: 300 DPI for crisp, professional quality
 - **Colors**: Full color recommended
 - **Cutting**: Follow the grey dashed lines to separate cards
 - **Card size**: Each flashcard is A6 size (105mm × 148mm)
@@ -120,4 +119,4 @@ This project is open source. Feel free to use and modify as needed.
 
 ---
 
-*Made with ❤️ for early childhood education* 
+*Made with ❤️ for early childhood education*
