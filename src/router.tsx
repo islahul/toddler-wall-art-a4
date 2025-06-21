@@ -2,6 +2,7 @@ import { createRouter, createRoute, createRootRoute, Outlet } from '@tanstack/re
 import { Home } from './pages/Home'
 import { ProjectView } from './pages/ProjectView'
 import { SheetView } from './pages/SheetView'
+import { getRouterBasePath } from './config/app'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -33,7 +34,7 @@ const routeTree = rootRoute.addChildren([indexRoute, projectRoute, sheetRoute])
 
 export const router = createRouter({ 
   routeTree,
-  basepath: import.meta.env.PROD ? '/toddler-wall-art-a4/' : '/',
+  basepath: getRouterBasePath(),
 })
 
 declare module '@tanstack/react-router' {

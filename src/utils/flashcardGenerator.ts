@@ -1,4 +1,5 @@
 import { Flashcard } from '../types/flashcard'
+import { getBasePath } from '../config/app'
 
 // Default animal names from the original Python script
 const DEFAULT_ANIMALS: string[] = [
@@ -46,10 +47,11 @@ const getAnimalBackgroundColor = (animal: string): string => {
 
 // Generate flashcard data grouped into sheets of 4 cards each
 export const generateFlashcardData = (): Flashcard[][] => {
+  const basePath = getBasePath()
   const allCards: Flashcard[] = LETTER_SEQUENCE.split('').map((letter, index) => ({
     letter,
     animal: DEFAULT_ANIMALS[index],
-    imageSrc: `/animals/${letter}.png`,
+    imageSrc: `${basePath}/animals/${letter}.png`,
     backgroundColor: getAnimalBackgroundColor(DEFAULT_ANIMALS[index])
   }))
 
@@ -67,10 +69,11 @@ export const getCardByLetter = (letter: string): Flashcard | null => {
   const index = LETTER_SEQUENCE.indexOf(letter.toUpperCase())
   if (index === -1) return null
   
+  const basePath = getBasePath()
   return {
     letter: letter.toUpperCase(),
     animal: DEFAULT_ANIMALS[index],
-    imageSrc: `/animals/${letter.toUpperCase()}.png`,
+    imageSrc: `${basePath}/animals/${letter.toUpperCase()}.png`,
     backgroundColor: getAnimalBackgroundColor(DEFAULT_ANIMALS[index])
   }
 } 

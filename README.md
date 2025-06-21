@@ -13,6 +13,7 @@ A modern React web application that generates beautiful, printable A4 sheets con
 - **Dynamic background colors** for each animal
 - **Perfect text alignment** with proper centering and spacing
 - **Built with modern React and Vite** for fast development and deployment
+- **Centralized configuration** for easy maintenance and deployment
 
 ## 🎨 Sample Output
 
@@ -96,6 +97,34 @@ The built files in the `dist/` directory can be deployed to any static hosting s
 - Vercel
 - Firebase Hosting
 - AWS S3 + CloudFront
+
+## ⚙️ Configuration
+
+### Centralized Configuration
+
+This project uses a centralized configuration approach to maintain consistency across all environments:
+
+- **`constants.ts`** - Root-level shared constants
+- **`src/config/app.ts`** - App-specific configuration and helper functions
+- **`vite.config.ts`** - Build configuration using shared constants
+
+To change the production base path or GitHub Pages URL, update the `PROJECT_CONSTANTS` in `constants.ts`:
+
+```typescript
+export const PROJECT_CONSTANTS = {
+  REPO_NAME: 'toddler-wall-art-a4',
+  GITHUB_USERNAME: 'islahul',
+  PRODUCTION_BASE_PATH: '/toddler-wall-art-a4',
+  GITHUB_PAGES_URL: 'https://islahul.github.io/toddler-wall-art-a4/',
+  // ... other constants
+}
+```
+
+This ensures that:
+- ✅ Vite build configuration uses the correct base path
+- ✅ Router configuration uses the correct base path
+- ✅ Image paths are correctly generated for production
+- ✅ All configuration is maintained in one place
 
 ## 🖨️ Printing Instructions
 

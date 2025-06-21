@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
+import { PROJECT_CONSTANTS } from './constants.ts'
 
 // https://vite.dev/config/
 export default defineConfig(({ command }) => {
@@ -9,7 +10,7 @@ export default defineConfig(({ command }) => {
   
   return {
     plugins: [react(), tailwindcss()],
-    base: isDev ? '/' : '/toddler-wall-art-a4/',
+    base: isDev ? '/' : `${PROJECT_CONSTANTS.PRODUCTION_BASE_PATH}/`,
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
