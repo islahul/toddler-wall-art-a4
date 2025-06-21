@@ -31,7 +31,10 @@ const sheetRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, projectRoute, sheetRoute])
 
-export const router = createRouter({ routeTree })
+export const router = createRouter({ 
+  routeTree,
+  basepath: '/toddler-flashcards-a4/' // GitHub Pages base path
+})
 
 declare module '@tanstack/react-router' {
   interface Register {

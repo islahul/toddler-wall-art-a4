@@ -91,7 +91,6 @@ export const SheetView: React.FC = () => {
         <div className="flex justify-center my-8 print:my-0">
           <FlashcardSheet 
             cards={currentSheetData} 
-            sheetNumber={currentSheet + 1}
           />
         </div>
 

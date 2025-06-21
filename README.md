@@ -63,6 +63,40 @@ npm run build
 
 The built files will be in the `dist/` directory, ready for deployment.
 
+## 🌐 Deployment
+
+### GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages:
+
+1. **Push your code to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Select "GitHub Actions" as the source
+   - The workflow will automatically deploy on every push to main
+
+3. **Manual deployment** (if needed):
+   ```bash
+   npm run deploy
+   ```
+
+Your app will be available at: `https://[your-username].github.io/toddler-flashcards-a4/`
+
+### Other Hosting Platforms
+
+The built files in the `dist/` directory can be deployed to any static hosting service:
+- Netlify
+- Vercel
+- Firebase Hosting
+- AWS S3 + CloudFront
+
 ## 🖨️ Printing Instructions
 
 1. **Navigate through sheets** using the Previous/Next buttons
