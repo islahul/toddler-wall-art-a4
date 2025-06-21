@@ -10,12 +10,12 @@ interface FlashcardProps {
 const Flashcard: React.FC<FlashcardProps> = ({ letter, animal, imageSrc, backgroundColor }) => {
   return (
     <div 
-      className="relative flex flex-col items-center justify-start p-4 text-center border-r border-b border-dashed border-gray-300"
+      className="relative flex flex-col items-center justify-start p-4 text-center border-r border-b border-dashed border-gray-300 [print-color-adjust:exact]"
       style={{ backgroundColor }}
     >
-      <div className="flex-grow flex flex-col justify-center items-center">
+      <div className="flex-grow flex flex-col justify-center items-center font-fun">
         <h1 className="text-8xl font-black text-gray-800 tracking-tighter">{letter}</h1>
-        <p className="text-3xl font-bold text-gray-700 mt-2">{animal}</p>
+        <p className="text-3xl font-bold text-gray-700 mt-2 uppercase">{animal}</p>
       </div>
 
       <div className="w-full h-48 flex items-center justify-center my-4">

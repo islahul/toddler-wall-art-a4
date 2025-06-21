@@ -23,18 +23,18 @@ const getAnimalBackgroundColor = (animal: string): string => {
     "Hippo": "#708090", // Slate gray
     "Iguana": "#32CD32", // Lime green
     "Jaguar": "#FFD700", // Gold
-    "Koala": "#8B4513", // Saddle brown
+    "Koala": "#E0F0E0", // Light eucalyptus green
     "Lion": "#DAA520", // Goldenrod
     "Monkey": "#CD853F", // Peru
     "Narwhal": "#87CEEB", // Sky blue
     "Owl": "#696969", // Dim gray
-    "Penguin": "#000080", // Navy
+    "Penguin": "#ADD8E6", // Light blue
     "Quail": "#8B7355", // Dark khaki
     "Rabbit": "#F5F5DC", // Beige
     "Snake": "#228B22", // Forest green
     "Tiger": "#FF8C00", // Dark orange
     "Urial": "#A0522D", // Sienna
-    "Vulture": "#2F4F4F", // Dark slate gray
+    "Vulture": "#F5F5DC", // Light beige (sky)
     "Whale": "#4682B4", // Steel blue
     "Xerus": "#D2691E", // Chocolate
     "Yak": "#8B7355", // Dark khaki

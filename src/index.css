@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-fun: "Patrick Hand", "cursive";
+  --font-fun-kerning: 0.05em;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -53,5 +58,23 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+  }
+
+  .font-fun {
+    font-family: var(--font-fun);
+    letter-spacing: var(--font-fun-kerning);
+  }
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+    margin: 0;
   }
 }
