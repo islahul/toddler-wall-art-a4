@@ -6,7 +6,7 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // Use relative paths for assets
+  base: '/toddler-flashcards-a4/', // Set base path for GitHub Pages
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
