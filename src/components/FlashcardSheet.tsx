@@ -9,7 +9,7 @@ interface FlashcardSheetProps {
 
 const FlashcardSheet: React.FC<FlashcardSheetProps> = ({ cards, sheetNumber }) => {
   return (
-    <div className="w-[210mm] h-[297mm] bg-white mx-auto relative overflow-hidden shadow-lg border">
+    <div className="w-[210mm] h-[297mm] bg-white mx-auto relative overflow-hidden border shadow-dramatic">
       <div className="grid grid-cols-2 grid-rows-2 h-full">
         {cards.map((card, index) => (
           <Flashcard 

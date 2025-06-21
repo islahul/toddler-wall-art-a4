@@ -98,7 +98,7 @@ export const SheetView: React.FC = () => {
         <div className="bg-card border p-8 rounded-2xl mt-12 print:hidden">
           <h3 className="text-2xl font-bold text-card-foreground mb-4">Printing Instructions</h3>
           <p className="text-muted-foreground mb-4">
-            Click the "Print Sheet" button to open the print dialog. For best results, use standard A4 paper. After printing, you can cut along the dashed lines to separate the flashcards.
+            Click the "Print Sheet" button to open the print dialog. For best results, use standard A4 paper. After printing, you can cut along the dashed lines to separate the wall art pieces.
           </p>
           <ul className="text-muted-foreground space-y-2 list-disc list-inside">
             <li>Paper Size: A4 (210mm × 297mm)</li>

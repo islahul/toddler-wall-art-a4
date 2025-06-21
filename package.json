@@ -2,7 +2,7 @@
   "name": "toddler-flashcards-a4",
   "private": true,
   "version": "1.0.0",
-  "description": "A React web app that generates printable A4 sheets with animal alphabet flashcards",
+  "description": "A React web app that generates printable A4 sheets with animal alphabet wall art",
   "type": "module",
   "scripts": {
     "dev": "vite",

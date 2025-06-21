@@ -1,6 +1,6 @@
-# 🦁 Animal Alphabet Flashcards - Web App
+# 🦁 Animal Alphabet Wall Art - Web App
 
-A modern React web application that generates beautiful, printable A4 sheets containing four A6 toddler flashcards per page. Each card features a large uppercase letter, a centered animal illustration, and the animal's name.
+A modern React web application that generates beautiful, printable A4 sheets containing four A6 toddler wall art pieces per page. Each piece features a large uppercase letter, a centered animal illustration, and the animal's name.
 
 ## ✨ Features
 
@@ -8,7 +8,7 @@ A modern React web application that generates beautiful, printable A4 sheets con
 - **Interactive web interface** with sheet navigation
 - **Print functionality** with one-click printing
 - **Responsive design** that works on desktop and mobile
-- **Automatic page breaks** – 4 cards per sheet in A-D, E-H… order
+- **Automatic page breaks** – 4 pieces per sheet in A-D, E-H… order
 - **Rounded corner borders** with grey dashed cut lines for easy separation
 - **Dynamic background colors** for each animal
 - **Perfect text alignment** with proper centering and spacing
@@ -16,7 +16,7 @@ A modern React web application that generates beautiful, printable A4 sheets con
 
 ## 🎨 Sample Output
 
-The app generates beautiful flashcards like these:
+The app generates beautiful wall art pieces like these:
 
 ```
 ┌─────────────┐  ┌─────────────┐
@@ -28,7 +28,7 @@ The app generates beautiful flashcards like these:
 └─────────────┘  └─────────────┘
 ```
 
-Each sheet contains 4 cards with:
+Each sheet contains 4 pieces with:
 - Large, clear uppercase letters
 - Cute animal illustrations
 - Easy-to-read animal names
@@ -68,8 +68,8 @@ The built files will be in the `dist/` directory, ready for deployment.
 1. **Navigate through sheets** using the Previous/Next buttons
 2. **Click "Print Current Sheet"** to open the print dialog
 3. **Use A4 paper** for best results
-4. **Cut along the dashed lines** to separate individual flashcards
-5. **Each card is A6 size** (105mm × 148mm)
+4. **Cut along the dashed lines** to separate individual wall art pieces
+5. **Each piece is A6 size** (105mm × 148mm)
 
 ## 🎨 Default Animals
 
@@ -106,8 +106,8 @@ Modify the `getAnimalBackgroundColor` function in `src/utils/flashcardGenerator.
 
 - **Paper**: Standard A4 (210mm × 297mm)
 - **Colors**: Full color recommended
-- **Cutting**: Follow the grey dashed lines to separate cards
-- **Card size**: Each flashcard is A6 size (105mm × 148mm)
+- **Cutting**: Follow the grey dashed lines to separate pieces
+- **Piece size**: Each wall art piece is A6 size (105mm × 148mm)
 
 ## 🤝 Contributing
 
