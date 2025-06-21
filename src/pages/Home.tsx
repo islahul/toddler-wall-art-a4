@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
           <div className="absolute top-5 right-5">
             <ModeToggle />
           </div>
-          <h1 className="text-5xl font-extrabold text-foreground mb-4">📚 Wall Art Projects</h1>
+          <h1 className="text-5xl font-extrabold text-foreground mb-4">Wall Art Projects</h1>
           <p className="text-xl text-muted-foreground">Choose a project to view and print wall art</p>
         </header>
 
