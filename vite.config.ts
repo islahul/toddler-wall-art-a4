@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   
   return {
     plugins: [react(), tailwindcss()],
-    base: isDev ? '/' : '/toddler-flashcards-a4/',
+    base: isDev ? '/' : '/toddler-wall-art-a4/',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),

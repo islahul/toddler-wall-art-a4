@@ -87,7 +87,7 @@ This project is configured for automatic deployment to GitHub Pages:
    npm run deploy
    ```
 
-Your app will be available at: `https://[your-username].github.io/toddler-flashcards-a4/`
+Your app will be available at: `https://[your-username].github.io/toddler-wall-art-a4/`
 
 ### Other Hosting Platforms
 

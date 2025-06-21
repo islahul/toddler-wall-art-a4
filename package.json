@@ -1,10 +1,10 @@
 {
-  "name": "toddler-flashcards-a4",
+  "name": "toddler-wall-art-a4",
   "private": true,
   "version": "1.0.0",
   "description": "A React web app that generates printable A4 sheets with animal alphabet wall art",
   "type": "module",
-  "homepage": "https://islahul.github.io/toddler-flashcards-a4/",
+  "homepage": "https://islahul.github.io/toddler-wall-art-a4/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
