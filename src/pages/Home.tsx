@@ -22,6 +22,14 @@ export const Home: React.FC = () => {
       imageCount: 7,
       route: '/project/alphabets-animals',
       icon: '🦁'
+    },
+    {
+      id: 'numbers-cats',
+      title: 'Numbers with Cats',
+      description: '3 printable wall art sheets with numbers 1 to 10 and cat illustrations',
+      imageCount: 3,
+      route: '/number-project/numbers-cats',
+      icon: '🐱'
     }
     // Add more projects here in the future
   ]
